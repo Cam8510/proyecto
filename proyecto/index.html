@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFlow - Panel de Cultivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-section" class="active">
+        <div class="login-card">
+            <div class="logo-area">
+                <h1>AgroFlow</h1>
+                <p>Gestión Inteligente del Campo</p>
+            </div>
+            
+            <div class="input-group">
+                <label for="cedula">Número de Cédula</label>
+                <input type="text" id="cedula" placeholder="Ej: 1234">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="****">
+            </div>
+
+            <button class="btn btn-primary" onclick="iniciarSesion()">Ingresar</button>
+            <p id="error-msg">Credenciales incorrectas. Intente de nuevo.</p>
+        </div>
+    </div>
+
+    <div id="dashboard-section" class="hidden">
+        <div class="dashboard-container">
+            
+<header class="header">
+                <div class="header-titles">
+                    <h2>Mi Cultivo - Lote Principal</h2>
+                    <span id="nombre-usuario">Bienvenido a AgroFlow</span>
+                </div>
+                <button class="btn btn-outline" onclick="cerrarSesion()">Cerrar Sesión</button>
+            </header>
+
+            <main class="dashboard-content">
+                <div class="panel-izquierdo">
+                    <div class="recomendaciones-caja">
+                        <h3>Recomendaciones del Asesor (IA)</h3>
+                        <div id="recomendaciones-contenedor">
+                            <p style="color: #888; font-size: 14px; padding: 10px;">Buscando recomendaciones de la IA...</p>
+                        </div>
+                    </div>
+
+                    <div class="carga-datos-caja">
+                        <h3>Cargar Nuevos Datos (CSV)</h3>
+                        <p>Sube tu archivo para actualizar el modelo.</p>
+                        <input type="file" id="csv-file" accept=".csv" class="file-input">
+                        <p id="csv-status" class="status-msg"></p>
+                    </div>
+                </div>
+
+                <div class="panel-derecho">
+                    <div class="kpi-caja">
+                        <div class="kpi-titulo">Humedad Suelo</div>
+                        <div class="kpi-valor" id="kpi-humedad">42<span class="kpi-unidad">%</span></div>
+                    </div>
+                    <div class="kpi-caja">
+                        <div class="kpi-titulo">Temperatura</div>
+                        <div class="kpi-valor" id="kpi-temp">18<span class="kpi-unidad">°C</span></div>
+                    </div>
+                    <div class="kpi-caja">
+                        <div class="kpi-titulo">Luz (Lux)</div>
+                        <div class="kpi-valor" id="kpi-lux">35k<span class="kpi-unidad"> lx</span></div>
+                    </div>
+                    <div class="kpi-caja">
+                        <div class="kpi-titulo">Calidad Aire</div>
+                        <div class="kpi-valor" id="kpi-aire">95<span class="kpi-unidad"> AQI</span></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

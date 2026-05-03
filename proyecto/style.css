@@ -1,0 +1,248 @@
+/* Variables de color para mantener consistencia */
+:root {
+    --verde-oscuro: #1b4332;
+    --verde-principal: #2d6a4f;
+    --verde-claro: #d8f3dc;
+    --tierra: #5c4033;
+    --fondo-app: #f4f4f9;
+    --blanco: #ffffff;
+    --texto-oscuro: #333333;
+    --gris-claro: #e0e0e0;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo-app);
+    color: var(--texto-oscuro);
+}
+
+/* --- CLASES DE UTILIDAD PARA MOSTRAR/OCULTAR --- */
+.active { display: block; }
+.hidden { display: none; }
+
+/* ================= ESTILOS DEL LOGIN ================= */
+#login-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--verde-claro) 0%, var(--fondo-app) 100%);
+}
+
+.login-card {
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px;
+}
+
+.logo-area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-area h1 {
+    color: var(--verde-principal);
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.logo-area p {
+    color: var(--tierra);
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--verde-oscuro);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--verde-principal);
+}
+
+#error-msg {
+    color: #e63946;
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+    display: none;
+}
+
+/* Botones */
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+}
+
+.btn-primary:hover {
+    background-color: var(--verde-oscuro);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+    width: auto;
+    padding: 8px 16px;
+}
+
+.btn-outline:hover {
+    background-color: var(--blanco);
+    color: var(--verde-principal);
+}
+
+/* ================= ESTILOS DEL DASHBOARD ================= */
+#dashboard-section {
+    padding: 30px 20px;
+}
+
+/* Esto centra el contenido del dashboard correctamente */
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+
+.header {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.header-titles h2 { margin-bottom: 5px; }
+.header-titles span { font-size: 14px; opacity: 0.9; }
+
+.dashboard-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que se adapte en pantallas pequeñas */
+}
+
+/* Panel Izquierdo */
+.panel-izquierdo {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recomendaciones-caja, .carga-datos-caja {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.recomendaciones-caja h3, .carga-datos-caja h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 10px;
+}
+
+.recomendacion-item {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Input File */
+.file-input {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed var(--verde-principal);
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.status-msg {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--verde-principal);
+}
+
+/* Panel Derecho (KPIs) */
+.panel-derecho {
+    flex: 1.5;
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.kpi-caja {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border-top: 4px solid var(--verde-principal);
+}
+
+.kpi-titulo {
+    color: var(--tierra);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.kpi-valor {
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--verde-oscuro);
+}
+
+.kpi-unidad {
+    font-size: 18px;
+    color: #888;
+    margin-left: 5px;
+}

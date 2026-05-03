@@ -1,0 +1,7 @@
+{
+    "fecha_analisis": "2024-05-15 10:30:00",
+    "decision_hidrica": "ESPERAR",
+    "volumen_riego_ml": 0,
+    "ajuste_microclima": "Monitorear calidad de aire y asegurar ventilación.",
+    "analisis_general": "Los datos actuales muestran condiciones favorables para el cultivo. La humedad del suelo se encuentra en un nivel óptimo del 68%, lo que elimina la necesidad de riego inmediato. La temperatura de 22.0°C y la luz de 13000 Lux son adecuadas para el desarrollo de la mayoría de los cultivos en esta etapa. Sin embargo, el valor de 155 en el sensor MQ135 sugiere la presencia de gases en el aire que podrían requerir monitoreo continuo y la implementación de ventilación para mantener una calidad del aire óptima."
+}
